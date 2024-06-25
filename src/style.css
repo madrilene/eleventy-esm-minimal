@@ -252,25 +252,12 @@ a {
 
 /* ------------------ Compositions (layouts) ------------------ */
 
-.wrapper {
-  margin-inline: auto;
-  padding-inline: var(--gutter);
-  position: relative;
-  inline-size: var(--wrapper-width);
-}
-
-.repel {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: var(--repel-vertical-alignment, center);
-  gap: var(--gutter, var(--space-s-l));
-}
-
+/* https://every-layout.dev/layouts/stack/ */
 .flow > * + * {
   margin-block-start: var(--flow-space, 1em);
 }
 
+/* https://every-layout.dev/layouts/cluster/ */
 .cluster {
   display: flex;
   flex-wrap: wrap;
@@ -279,6 +266,34 @@ a {
   align-items: var(--cluster-vertical-alignment, center);
 }
 
+/* https://every-layout.dev/layouts/grid/ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    var(--grid-placement, auto-fill),
+    minmax(var(--grid-min-item-size, 16rem), 1fr)
+  );
+  gap: var(--gutter, var(--space-s-m));
+}
+
+/* https://piccalil.li/quick-tip/use-css-clamp-to-create-a-more-flexible-wrapper-utility/ */
+.wrapper {
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  position: relative;
+  inline-size: var(--wrapper-width);
+}
+
+/* pushes items away from each other where there is space in the viewport and stacks on small viewports */
+.repel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: var(--repel-vertical-alignment, center);
+  gap: var(--gutter, var(--space-s-l));
+}
+
+/* Add consistent vertical padding to create regions of content */
 .region {
   padding-block-start: var(--region-space-top, var(--space-l-xl));
   padding-block-end: var(--region-space-bottom, var(--space-l-xl));
