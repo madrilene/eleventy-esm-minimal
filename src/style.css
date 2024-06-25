@@ -220,6 +220,12 @@ h3 {
   font-size: var(--text-size-heading-3);
 }
 
+p,
+li,
+blockquote:not([class]) {
+  max-inline-size: 70ch;
+}
+
 svg {
   block-size: 2ex;
   inline-size: auto;
@@ -264,16 +270,6 @@ a {
   gap: var(--gutter, var(--space-s-l));
   justify-content: var(--cluster-horizontal-alignment, flex-start);
   align-items: var(--cluster-vertical-alignment, center);
-}
-
-/* https://every-layout.dev/layouts/grid/ */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(
-    var(--grid-placement, auto-fill),
-    minmax(var(--grid-min-item-size, 16rem), 1fr)
-  );
-  gap: var(--gutter, var(--space-s-m));
 }
 
 /* https://piccalil.li/quick-tip/use-css-clamp-to-create-a-more-flexible-wrapper-utility/ */
