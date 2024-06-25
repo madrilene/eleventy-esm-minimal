@@ -221,8 +221,7 @@ h3 {
 }
 
 p,
-li,
-blockquote:not([class]) {
+li {
   max-inline-size: 70ch;
 }
 
