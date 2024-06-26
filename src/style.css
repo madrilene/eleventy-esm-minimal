@@ -167,7 +167,7 @@
   --font-base: system-ui, sans-serif;
   --leading: 1.5;
   --leading-fine: 1.2;
-  --accent-color: deeppink;
+  --color: deeppink;
 
   /* color scheme */
   &:has(input[name='color-scheme'][value='light dark']:checked) {
@@ -195,7 +195,7 @@ body {
   flex-direction: column;
   color: CanvasText;
   background-color: Canvas;
-  accent-color: var(--accent-color);
+  accent-color: var(--color);
 }
 
 main {
@@ -244,7 +244,7 @@ a {
 
 /* Text selection */
 ::selection {
-  background-color: var(--accent-color);
+  background-color: var(--color);
   color: currentColor;
 }
 
