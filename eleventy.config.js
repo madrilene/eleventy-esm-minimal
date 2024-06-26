@@ -4,7 +4,7 @@
 
 export default async function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./src/*');
-  eleventyConfig.addPassthroughCopy('src/*.{css,js,jpg}');
+  eleventyConfig.addPassthroughCopy('src/*.{css,js,jpg,ico}');
 
   return {
     dir: {
