@@ -9,12 +9,10 @@
     "node": ">=18.x.x"
   },
   "scripts": {
-    "clean": "rimraf dist",
     "start": "eleventy --serve --watch",
     "build": "eleventy"
   },
   "dependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.13",
-    "rimraf": "^5.0.7"
+    "@11ty/eleventy": "3.0.0-alpha.13"
   }
 }
