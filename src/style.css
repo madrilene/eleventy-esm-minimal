@@ -1,316 +1,372 @@
-/* ------------------ reset  ------------------
+@layer reset {
+  /* ------------------ reset  ------------------ */
 
-/* inspired by: */
-/* https://piccalil.li/blog/a-modern-css-reset/ */
-/* https://keithjgrant.com/posts/2024/01/my-css-resets/ */
-/* https://moderncss.dev/modern-css-for-dynamic-component-based-architecture/#css-reset-additions */
-/* https://github.com/mayank99/reset.css/blob/main/package/index.css */
+  /* inspired by: */
+  /* https://piccalil.li/blog/a-modern-css-reset/ */
+  /* https://keithjgrant.com/posts/2024/01/my-css-resets/ */
+  /* https://moderncss.dev/modern-css-for-dynamic-component-based-architecture/#css-reset-additions */
+  /* https://github.com/mayank99/reset.css/blob/main/package/index.css */
 
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Typography */
-:where(*) {
-  text-wrap: pretty;
-}
-
-:where(h1, h2, h3, h4) {
-  text-wrap: balance;
-}
-
-/* Scroll behavior */
-:where(html:focus-within) {
-  scroll-behavior: smooth;
-}
-
-/* Body defaults */
-:where(body) {
-  min-height: 100vh;
-  min-height: 100dvh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-/* Margins */
-:where(body, h1, h2, h3, h4, p, figure, blockquote, dl, dd) {
-  margin: 0;
-}
-
-/* List styles */
-:where(ul[role='list'], ol[role='list']) {
-  list-style: none;
-}
-
-/* Padding for lists */
-:where([role='list']) {
-  padding: 0;
-}
-
-/* Anchor styles */
-:where(a:not([class])) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Image styles */
-:where(img, picture, svg, canvas) {
-  max-inline-size: 100%;
-  block-size: auto;
-  vertical-align: middle;
-  font-style: italic;
-  background-repeat: no-repeat;
-  background-size: cover;
-  shape-margin: 0.75rem;
-}
-
-/* Button styles */
-:where(button) {
-  all: unset;
-}
-
-/* Inherit fonts for inputs and buttons */
-:where(button, input, select, textarea) {
-  font: inherit;
-  color: inherit;
-}
-
-/* Textarea styles */
-:where(textarea) {
-  resize: vertical;
-  resize: block;
-}
-
-/* Textarea height */
-:where(textarea:not([rows])) {
-  min-height: 10em;
-}
-
-/* Cursor styles */
-:where(button, label, select, summary, [role='button'], [role='option']) {
-  cursor: pointer;
-}
-
-/* Scroll margin above anchor links */
-:where(:target) {
-  scroll-margin-block-start: 2ex;
-}
-
-/* Scroll margin below focused elements */
-:where(:focus) {
-  scroll-margin-block-end: 8vh;
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
+  /* Box sizing rules */
 
   *,
-  ::after,
-  ::before {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Typography */
+  * {
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  /* Scroll behavior */
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+
+  /* Body defaults */
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  }
+
+  /* Margins */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  /* List styles */
+  ul[role='list'],
+  ol[role='list'] {
+    list-style: none;
+  }
+
+  /* Padding for lists */
+  [role='list'] {
+    padding: 0;
+  }
+
+  /* Anchor styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+
+  /* Image styles */
+  img,
+  picture,
+  svg,
+  canvas {
+    max-inline-size: 100%;
+    block-size: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 0.75rem;
+  }
+
+  /* Button styles */
+  button {
+    all: unset;
+  }
+
+  /* Inherit fonts for inputs and buttons */
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  /* Textarea styles */
+  textarea {
+    resize: vertical;
+    resize: block;
+  }
+
+  /* Textarea height */
+  textarea:not([rows]) {
+    min-height: 10em;
+  }
+
+  /* Cursor styles */
+  button,
+  label,
+  select,
+  summary,
+  [role='button'],
+  [role='option'] {
+    cursor: pointer;
+  }
+
+  /* Scroll margin above anchor links */
+  :target {
+    scroll-margin-block-start: 2ex;
+  }
+
+  /* Scroll margin below focused elements */
+  :focus {
+    scroll-margin-block-end: 8vh;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+
+    *,
+    ::after,
+    ::before {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-/* ------------------ variables  ------------------  */
+@layer variables {
+  /* ------------------ variables  ------------------  */
 
-:root {
-  /* font sizes */
-  /* https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,l,xl,12 */
-  --size-step--2: clamp(0.7813rem, 0.7747rem + 0.0326vi, 0.8rem);
-  --size-step--1: clamp(0.9375rem, 0.9158rem + 0.1087vi, 1rem);
-  --size-step-0: clamp(1.125rem, 1.0815rem + 0.2174vi, 1.25rem);
-  --size-step-1: clamp(1.35rem, 1.2761rem + 0.3696vi, 1.5625rem);
-  --size-step-2: clamp(1.62rem, 1.5041rem + 0.5793vi, 1.9531rem);
-  --size-step-3: clamp(1.944rem, 1.771rem + 0.8651vi, 2.4414rem);
-  --size-step-4: clamp(2.3328rem, 2.0827rem + 1.2504vi, 3.0518rem);
-  --size-step-5: clamp(2.7994rem, 2.4462rem + 1.7658vi, 3.8147rem);
-
-  /* spacing */
-  /* https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,l,xl,12 */
-  --space-3xs: clamp(0.3125rem, 0.3125rem + 0vi, 0.3125rem);
-  --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vi, 0.625rem);
-  --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vi, 0.9375rem);
-  --space-s: clamp(1.125rem, 1.0815rem + 0.2174vi, 1.25rem);
-  --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vi, 1.875rem);
-  --space-l: clamp(2.25rem, 2.163rem + 0.4348vi, 2.5rem);
-  --space-xl: clamp(3.375rem, 3.2446rem + 0.6522vi, 3.75rem);
-  --space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vi, 5rem);
-  --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vi, 7.5rem);
-
-  --space-3xs-2xs: clamp(0.3125rem, 0.2038rem + 0.5435vi, 0.625rem);
-  --space-2xs-xs: clamp(0.5625rem, 0.4321rem + 0.6522vi, 0.9375rem);
-  --space-xs-s: clamp(0.875rem, 0.7446rem + 0.6522vi, 1.25rem);
-  --space-s-m: clamp(1.125rem, 0.8641rem + 1.3043vi, 1.875rem);
-  --space-m-l: clamp(1.6875rem, 1.4049rem + 1.413vi, 2.5rem);
-  --space-l-xl: clamp(2.25rem, 1.7283rem + 2.6087vi, 3.75rem);
-  --space-xl-2xl: clamp(3.375rem, 2.8098rem + 2.8261vi, 5rem);
-  --space-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vi, 7.5rem);
-
-  --space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vi, 2.5rem);
-
-  /* semantic variables */
-
-  --gutter: var(--space-s-m);
-  --wrapper-width: clamp(16rem, 98vw, 65rem);
-  --text-size-base: var(--size-step-0);
-  --text-size-heading-1: var(--size-step-5);
-  --text-size-heading-2: var(--size-step-4);
-  --text-size-heading-3: var(--size-step-3);
-  --font-base: system-ui, sans-serif;
-  --leading: 1.5;
-  --leading-fine: 1.2;
-  --color: deeppink;
-
-  /* color scheme */
-  &:has(input[name='color-scheme'][value='light dark']:checked) {
+  :root {
     color-scheme: light dark;
-  }
-  &:has(input[name='color-scheme'][value='light']:checked) {
-    color-scheme: light;
-  }
-  &:has(input[name='color-scheme'][value='dark']:checked) {
-    color-scheme: dark;
-  }
-}
+    --_dark: color-mix(in oklab, black 70%, snow);
+    --color-highlight: light-dark(deeppink, mediumvioletred);
+    --color-bg: light-dark(snow, var(--_dark));
+    --color-text: light-dark(var(--_dark), snow);
 
-/* ------------------ base  ------------------  */
+    /* mode switch (https://web.dev/articles/light-dark) */
+    &:has(input[name='color-scheme'][value='light dark']:checked) {
+      color-scheme: light dark;
+    }
+    &:has(input[name='color-scheme'][value='light']:checked) {
+      color-scheme: light;
+    }
+    &:has(input[name='color-scheme'][value='dark']:checked) {
+      color-scheme: dark;
+    }
 
-html {
-  color-scheme: light dark;
-}
+    /* font sizes */
+    /* https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,l,xl,12 */
+    --size-step--2: clamp(0.7813rem, 0.7747rem + 0.0326vi, 0.8rem);
+    --size-step--1: clamp(0.9375rem, 0.9158rem + 0.1087vi, 1rem);
+    --size-step-0: clamp(1.125rem, 1.0815rem + 0.2174vi, 1.25rem);
+    --size-step-1: clamp(1.35rem, 1.2761rem + 0.3696vi, 1.5625rem);
+    --size-step-2: clamp(1.62rem, 1.5041rem + 0.5793vi, 1.9531rem);
+    --size-step-3: clamp(1.944rem, 1.771rem + 0.8651vi, 2.4414rem);
+    --size-step-4: clamp(2.3328rem, 2.0827rem + 1.2504vi, 3.0518rem);
+    --size-step-5: clamp(2.7994rem, 2.4462rem + 1.7658vi, 3.8147rem);
 
-body {
-  font-family: var(--font-base);
-  font-size: var(--text-size-base);
-  line-height: var(--leading);
-  display: flex;
-  flex-direction: column;
-  color: CanvasText;
-  background-color: Canvas;
-  accent-color: var(--color);
-}
+    /* spacing */
+    /* https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,l,xl,12 */
+    --space-3xs: clamp(0.3125rem, 0.3125rem + 0vi, 0.3125rem);
+    --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vi, 0.625rem);
+    --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vi, 0.9375rem);
+    --space-s: clamp(1.125rem, 1.0815rem + 0.2174vi, 1.25rem);
+    --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vi, 1.875rem);
+    --space-l: clamp(2.25rem, 2.163rem + 0.4348vi, 2.5rem);
+    --space-xl: clamp(3.375rem, 3.2446rem + 0.6522vi, 3.75rem);
+    --space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vi, 5rem);
+    --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vi, 7.5rem);
 
-main {
-  flex: auto;
-}
+    --space-3xs-2xs: clamp(0.3125rem, 0.2038rem + 0.5435vi, 0.625rem);
+    --space-2xs-xs: clamp(0.5625rem, 0.4321rem + 0.6522vi, 0.9375rem);
+    --space-xs-s: clamp(0.875rem, 0.7446rem + 0.6522vi, 1.25rem);
+    --space-s-m: clamp(1.125rem, 0.8641rem + 1.3043vi, 1.875rem);
+    --space-m-l: clamp(1.6875rem, 1.4049rem + 1.413vi, 2.5rem);
+    --space-l-xl: clamp(2.25rem, 1.7283rem + 2.6087vi, 3.75rem);
+    --space-xl-2xl: clamp(3.375rem, 2.8098rem + 2.8261vi, 5rem);
+    --space-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vi, 7.5rem);
 
-h1,
-h2,
-h3 {
-  line-height: var(--leading-fine);
-}
+    --space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vi, 2.5rem);
 
-h1 {
-  font-size: var(--text-size-heading-1);
-}
+    /* semantic variables */
 
-h2 {
-  font-size: var(--text-size-heading-2);
-}
-
-h3 {
-  font-size: var(--text-size-heading-3);
-}
-
-p,
-li {
-  max-inline-size: 70ch;
-}
-
-svg {
-  block-size: 2ex;
-  inline-size: auto;
-  flex: none;
-}
-
-a {
-  color: currentcolor;
-  text-decoration-thickness: 0.08em;
-}
-
-/* Focus styles */
-:focus-visible {
-  outline: 3px solid;
-  outline-offset: 0.3ch;
-}
-
-/* Text selection */
-::selection {
-  background-color: var(--color);
-  color: currentColor;
-}
-
-/* Scripting */
-@media (scripting: none) {
-  .require-js {
-    display: none;
+    --gutter: var(--space-s-m);
+    --wrapper-width: clamp(16rem, 98vw, 65rem);
+    --text-size-base: var(--size-step-0);
+    --text-size-heading-1: var(--size-step-5);
+    --text-size-heading-2: var(--size-step-4);
+    --text-size-heading-3: var(--size-step-3);
+    --font-base: system-ui, sans-serif;
+    --leading: 1.5;
+    --leading-fine: 1.2;
   }
 }
 
-/* ------------------ Compositions (layouts) ------------------ */
+@layer base {
+  /* ------------------ base  ------------------  */
 
-/* https://every-layout.dev/layouts/stack/ */
-.flow > * + * {
-  margin-block-start: var(--flow-space, 1em);
+  body {
+    font-family: var(--font-base);
+    font-size: var(--text-size-base);
+    line-height: var(--leading);
+    display: flex;
+    flex-direction: column;
+    accent-color: var(--color-highlight);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+  }
+
+  main {
+    flex: auto;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: var(--leading-fine);
+  }
+
+  h1 {
+    font-size: var(--text-size-heading-1);
+  }
+
+  h2 {
+    font-size: var(--text-size-heading-2);
+  }
+
+  h3 {
+    font-size: var(--text-size-heading-3);
+  }
+
+  p,
+  li {
+    max-inline-size: 70ch;
+  }
+
+  svg {
+    block-size: 2ex;
+    inline-size: auto;
+    flex: none;
+  }
+
+  a {
+    color: currentcolor;
+    text-decoration-thickness: 0.08em;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    outline: 3px solid;
+    outline-offset: 0.3ch;
+  }
+
+  /* Text selection */
+  ::selection {
+    background-color: var(--color-highlight);
+    color: currentColor;
+  }
+
+  /* Scripting */
+  @media (scripting: none) {
+    .require-js {
+      display: none;
+    }
+  }
 }
 
-/* https://every-layout.dev/layouts/cluster/ */
-.cluster {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gutter, var(--space-s-l));
-  justify-content: var(--cluster-horizontal-alignment, flex-start);
-  align-items: var(--cluster-vertical-alignment, center);
+@layer compositions {
+  /* ------------------ Compositions (layouts) ------------------ */
+
+  /* https://every-layout.dev/layouts/stack/ */
+  .flow > * + * {
+    margin-block-start: var(--flow-space, 1em);
+  }
+
+  /* https://every-layout.dev/layouts/cluster/ */
+  .cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter, var(--space-s-l));
+    justify-content: var(--cluster-horizontal-alignment, flex-start);
+    align-items: var(--cluster-vertical-alignment, center);
+  }
+
+  /* pushes items away from each other where there is space in the viewport and stacks on small viewports */
+  .repel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: var(--repel-vertical-alignment, center);
+    gap: var(--gutter, var(--space-s-l));
+  }
+
+  /* Add consistent vertical padding to create regions of content */
+  .region {
+    padding-block-start: var(--region-space-top, var(--space-l-xl));
+    padding-block-end: var(--region-space-bottom, var(--space-l-xl));
+  }
+
+  /* https://ryanmulligan.dev/blog/layout-breakouts/ */
+  .wrapper {
+    --gap: clamp(1rem, 6vw, 3rem);
+    --full: minmax(var(--gap), 1fr);
+    --content: min(var(--wrapper-width, 85rem), 100% - var(--gap) * 2);
+    --outer: minmax(0, 5rem);
+
+    display: grid;
+    grid-template-columns:
+      [full-start] var(--full)
+      [outer-start] var(--outer)
+      [content-start] var(--content) [content-end]
+      var(--outer) [outer-end]
+      var(--full) [full-end];
+  }
+
+  .wrapper > * {
+    grid-column: content;
+  }
+
+  .outer {
+    grid-column: feature;
+  }
+
+  .full {
+    grid-column: full;
+  }
 }
 
-/* https://piccalil.li/quick-tip/use-css-clamp-to-create-a-more-flexible-wrapper-utility/ */
-.wrapper {
-  margin-inline: auto;
-  padding-inline: var(--gutter);
-  position: relative;
-  inline-size: var(--wrapper-width);
-}
+@layer blocks {
+  /* ------------------ blocks  ------------------  */
 
-/* pushes items away from each other where there is space in the viewport and stacks on small viewports */
-.repel {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: var(--repel-vertical-alignment, center);
-  gap: var(--gutter, var(--space-s-l));
-}
+  .skip-link {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+  }
 
-/* Add consistent vertical padding to create regions of content */
-.region {
-  padding-block-start: var(--region-space-top, var(--space-l-xl));
-  padding-block-end: var(--region-space-bottom, var(--space-l-xl));
-}
-
-/* ------------------ blocks  ------------------  */
-
-.skip-link {
-  position: absolute;
-  top: 1em;
-  left: 1em;
-}
-
-.skip-link:not(:focus),
-.visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: auto;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
+  .skip-link:not(:focus),
+  .visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+  }
 }
